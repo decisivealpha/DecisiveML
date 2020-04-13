@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import statsmodels.api as sm1
 
+
 def tValLinR(close):
     """tValue from a linear trend via SNIPPET 5.1 T-VALUE OF A LINEAR TREND
 
