@@ -2,3 +2,4 @@ venv36
 .ipynb_checkpoints/
 __pycache__/
 *.egg-info/
+dist/
