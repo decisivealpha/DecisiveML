@@ -2,7 +2,7 @@
 name = "decisiveml"
 version = "0.0.1.200414"
 description = ""
-authors = ["ly <ly>"]
+authors = ["ly"]
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
