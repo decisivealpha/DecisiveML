@@ -1,5 +1,8 @@
 # CHANGELOG
 
-## [0.0.1.200414] - 2020-04-14
+## Unreleased
+
+## [0.0.1.200415] - 2020-04-15
 ### Added
-- Initial release
+- Module to calculate Monte Carlo and Risk of Ruin
+- Trend Scanning module and notebook
