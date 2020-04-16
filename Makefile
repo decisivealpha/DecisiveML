@@ -1,3 +1,11 @@
+## install requirements
+install:
+	poetry install
+
+## run nose
+test:
+	nosetests
+
 ## deploy to pypi
 deploy: build
 	twine upload dist/*
