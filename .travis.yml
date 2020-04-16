@@ -1,0 +1,15 @@
+language: python
+
+cache: pip
+
+python:
+    - "3.6"
+    - "3.7"
+
+install:
+    - pip install poetry
+    - poetry build
+    - pip install dist/*.whl
+
+script:
+    - poetry run nosetests
