@@ -3,3 +3,4 @@ venv36
 __pycache__/
 *.egg-info/
 dist/
+nosy.py
