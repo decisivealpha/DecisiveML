@@ -11,7 +11,7 @@ pip install decisiveml
 
 ## Develop
 
-Dependency management uses [poetry](https://github.com/python-poetry/poetry), and test suite is [nose](https://github.com/nose-devs/nose), and style is with [black](https://github.com/psf/black).
+Dependency management uses [poetry](https://github.com/python-poetry/poetry), test suite is [nose](https://github.com/nose-devs/nose), and code style is [black](https://github.com/psf/black).
 
 To develop:
 
