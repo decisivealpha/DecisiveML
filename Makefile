@@ -1,6 +1,7 @@
 ## install requirements
 install:
 	poetry install
+	pre-commit install
 
 ## run nose
 test:
