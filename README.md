@@ -6,13 +6,22 @@ Machine learning exploration
 
 pip install decisiveml
 
+## Develop
+
+Dependency management uses [poetry](https://github.com/python-poetry/poetry), and test suite is [nose](https://github.com/nose-devs/nose).
+
+To develop:
+
+1. Install requirements with: `poetry install` or `make install`
+2. Run tests with: `nosetests` or `make test`
+
 ## Examples
 
 See [notebooks](https://github.com/decisivealpha/DecisiveML/tree/master/notebooks) for more
 
 ### Trend Scanning
 
-[Feedback](https://www.reddit.com/r/algotrading/comments/g0idrl/trend_scanning_for_machine_learning_models/)
+[Read user comments on reddit for Trend Scanning](https://www.reddit.com/r/algotrading/comments/g0idrl/trend_scanning_for_machine_learning_models/)
 
 ```
   import numpy as np
@@ -41,7 +50,7 @@ See [notebooks](https://github.com/decisivealpha/DecisiveML/tree/master/notebook
 
 ### Monte Carlo
 
-[Feedback](https://www.reddit.com/r/algotrading/comments/g2aqhw/identify_alpha_decay_with_monte_carlo/)
+[Read user comments on reddit for Monte Carlo](https://www.reddit.com/r/algotrading/comments/g2aqhw/identify_alpha_decay_with_monte_carlo/)
 
 ```
   import decisiveml as dml
