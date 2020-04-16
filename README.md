@@ -12,6 +12,8 @@ See [notebooks](https://github.com/decisivealpha/DecisiveML/tree/master/notebook
 
 ### Trend Scanning
 
+[Feedback](https://www.reddit.com/r/algotrading/comments/g0idrl/trend_scanning_for_machine_learning_models/)
+
 ```
   import numpy as np
   import pandas as pd
@@ -38,6 +40,8 @@ See [notebooks](https://github.com/decisivealpha/DecisiveML/tree/master/notebook
 ```
 
 ### Monte Carlo
+
+[Feedback](https://www.reddit.com/r/algotrading/comments/g2aqhw/identify_alpha_decay_with_monte_carlo/)
 
 ```
   import decisiveml as dml
