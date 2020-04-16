@@ -2,6 +2,7 @@
 [![Build Status](https://travis-ci.com/decisivealpha/decisiveml.svg?branch=master)](https://travis-ci.com/decisivealpha/decisiveml)
 [![PyPi](https://img.shields.io/pypi/v/decisiveml)](https://pypi.org/project/decisiveml/)
 [![Python](https://img.shields.io/pypi/pyversions/decisiveml.svg)](https://pypi.org/project/decisiveml/)
+[![Discord Chat](https://img.shields.io/discord/594866572104040498.svg)](https://discord.gg/zQRSUhF)
 
 Machine learning end-to-end research and trade execution
 
