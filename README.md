@@ -1,6 +1,9 @@
-# README
+# DecisiveML
+[![Build Status](https://travis-ci.com/decisivealpha/decisiveml.svg?branch=master)](https://travis-ci.com/decisivealpha/decisiveml)
+[![PyPi](https://img.shields.io/pypi/v/decisiveml)](https://pypi.org/project/decisiveml/)
+[![Python](https://img.shields.io/pypi/pyversions/decisiveml.svg)](https://pypi.org/project/decisiveml/)
 
-Machine learning exploration
+Machine learning end-to-end research and trade execution
 
 ## Install
 
