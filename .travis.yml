@@ -5,6 +5,7 @@ cache: pip
 python:
     - "3.6"
     - "3.7"
+    - "3.8"
 
 install:
     - pip install poetry
@@ -12,4 +13,4 @@ install:
     - pip install dist/*.whl
 
 script:
-    - poetry run nosetests
+    - poetry run nosetests --with-coverage --cover-package=decisiveml -d

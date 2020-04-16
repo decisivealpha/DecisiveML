@@ -5,7 +5,7 @@ install:
 
 ## run nose
 test:
-	nosetests
+	nosetests --with-coverage --cover-package=decisiveml -d
 
 ## deploy to pypi
 deploy: build
