@@ -1,5 +1,5 @@
 ## deploy to pypi
-deploy:
+deploy: build
 	twine upload dist/*
 
 ## build package
