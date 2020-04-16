@@ -6,11 +6,22 @@ Machine learning exploration
 
 pip install decisiveml
 
+## Develop
+
+Dependency management uses [poetry](https://github.com/python-poetry/poetry), and test suite is [nose](https://github.com/nose-devs/nose), and style is with [black](https://github.com/psf/black).
+
+To develop:
+
+1. Initialize with `make install`
+2. Run tests with: `make test`
+
 ## Examples
 
 See [notebooks](https://github.com/decisivealpha/DecisiveML/tree/master/notebooks) for more
 
 ### Trend Scanning
+
+See [docs](https://github.com/decisivealpha/DecisiveML/tree/master/docs/trend_scanning.md) for more on Trend Scanning
 
 ```
   import numpy as np
@@ -38,6 +49,8 @@ See [notebooks](https://github.com/decisivealpha/DecisiveML/tree/master/notebook
 ```
 
 ### Monte Carlo
+
+See [docs](https://github.com/decisivealpha/DecisiveML/tree/master/docs/monte_carlo.md) for more on Monte Carlo
 
 ```
   import decisiveml as dml
