@@ -4,11 +4,11 @@
 [![Python](https://img.shields.io/pypi/pyversions/decisiveml.svg)](https://pypi.org/project/decisiveml/)
 [![Discord Chat](https://img.shields.io/discord/594866572104040498.svg)](https://discord.gg/zQRSUhF)
 
-Machine learning end-to-end research and trade execution
+DecisiveML enables end-to-end research and trade execution with machine learning
 
 ## Install
 
-pip install decisiveml
+`pip install decisiveml`
 
 ## Develop
 
@@ -88,4 +88,8 @@ results = mc.run(trial_starting_equity)
 
 ## Support
 
-Discuss in [Discord](https://discord.gg/zQRSUhF)
+- Chat in [Discord](https://discord.gg/zQRSUhF)
+- Submit [issues](https://github.com/decisivealpha/DecisiveML/issues)
+- Submit [pull requests](https://github.com/decisivealpha/DecisiveML/pulls)
+
+Released under [BSD-3-Clause](https://github.com/decisivealpha/DecisiveML/blob/master/LICENSE.txt) license
