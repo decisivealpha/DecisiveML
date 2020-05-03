@@ -1,3 +1,4 @@
+import pandas as pd
 import random
 import statistics
 import logging
@@ -31,6 +32,10 @@ replacement.
 
 
 random.choices = choices
+
+
+class ExcessiveBaseEquity(Exception):
+    pass
 
 
 class MonteCarlo(object):
@@ -90,7 +95,10 @@ class MonteCarlo(object):
             "is_ruined": is_ruined,
             "is_profitable": 1 if sum(trades) >= 0 else 0,
         }
-        stats["returns_per_drawdown"] = stats["returns_pct"] / stats["drawdown_pct"]
+        try:
+            stats["returns_per_drawdown"] = stats["returns_pct"] / stats["drawdown_pct"]
+        except ZeroDivisionError:
+            stats["returns_per_drawdown"] = 0
         logger.debug(stats)
         return stats
 
@@ -154,10 +162,30 @@ class MonteCarlo(object):
         return median_montecarlo
 
     def run(self, base_equity, steps=11):
+        """Create the results for the MonteCarlo, adding equity to the
+        base_equity
+
+        Args:
+            base_equity (int): starting equity to add to
+            steps (:obj:`int`, optional). Default is 11 runs.
+
+        Returns:
+            pd.DataFrame: results for each run with various starting equities
+
+        Example:
+            >>> mc = dvm.MonteCarlo(trade_list)
+            >>> start_date = trade_list.index[0].to_pydatetime()
+            >>> end_date = trade_list.index[-1].to_pydatetime()
+            >>> mc.settings(ruin_equity=5000, start_date=start_date, end_date=end_date)
+            >>> results = mc.run(base_equity=starting_equity)
+
+        """
         step_size = int(base_equity / 4)
         end_eq = base_equity + step_size * steps
         starting_equities_list = range(base_equity, end_eq, step_size)
-        return self._run_equity_list(starting_equities_list)
+        results = self._run_equity_list(starting_equities_list)
+        df = pd.DataFrame(results)
+        return df
 
     def _run_equity_list(self, starting_equities_list):
         runs = []
@@ -172,3 +200,45 @@ class MonteCarlo(object):
             if run["is_ruined"] < target_risk_of_ruin_pct:
                 return run
         return None
+
+    def recommendation(self, start_date, end_date):
+        """Create a recommendation from the best run
+
+        Args:
+            start_date (datetime): trade start date
+            end_date (datetime): trade end date
+
+        Returns:
+            pd.Series: recommendation categories
+
+        Example:
+            >>> mc = dvm.MonteCarlo(trade_list)
+            >>> start_date = trade_list.index[0].to_pydatetime()
+            >>> end_date = trade_list.index[-1].to_pydatetime()
+            >>> mc.settings(ruin_equity=5000, start_date=start_date, end_date=end_date)
+            >>> results = mc.run(base_equity=starting_equity)
+            >>> my_rec = mc.recommendation(start_date, end_date)
+        """
+
+        # Get the recommended values
+        best = self.best_run()
+        my_rec = pd.Series(best)
+
+        if my_rec.empty:
+            raise ExcessiveBaseEquity(f"No best run found")
+
+        # Determine result
+        if my_rec["is_ruined"] > 10 or my_rec["returns_per_drawdown"] < 2.0:
+            logger.info("MonteCarlo Risk Assessment: FAILED")
+            my_rec["is_pass"] = False
+        else:
+            logger.info("MonteCarlo Risk Assessment: PASSED")
+            my_rec["is_pass"] = True
+
+        # Add additional calculations
+        my_rec["start_date"] = start_date
+        my_rec["end_date"] = end_date
+        my_rec["months"] = (end_date - start_date).days / 30
+        my_rec["avg_monthly_profit"] = my_rec["profit"] / my_rec["months"]
+
+        return my_rec
