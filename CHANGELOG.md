@@ -3,6 +3,7 @@
 ## Unreleased
 ### Added
 - Documentation for Monte Carlo and Trend Scanning
+- Recommendation method for Monte Carlo
 
 ## [0.0.1.200415] - 2020-04-15
 ### Added
