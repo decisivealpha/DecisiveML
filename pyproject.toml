@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "decisiveml"
-version = "0.0.1.200415"
+version = "0.0.2"
 description = ""
 authors = ["ly"]
 
