@@ -140,3 +140,4 @@ cython_debug/
 # develop
 venv36
 nosy.py
+poetry.lock
