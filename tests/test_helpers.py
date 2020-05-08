@@ -17,8 +17,6 @@ class TestTradingHolidays(unittest.TestCase):
             index_col="Date",
         )
 
-        self.long_holiday = self.short_holiday
-
     def test_trading_holidays_in_range(self):
         """Test that we can remove our own holidays"""
         holidays = dml.trading_holidays_in_range(start="2018-12-01", end="2018-12-31")
