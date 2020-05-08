@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "decisiveml"
-version = "0.0.2"
+version = "0.0.3"
 description = ""
-authors = ["ly"]
+authors = ["Lionel Young"]
 
 [tool.poetry.dependencies]
 python = "^3.6.1"

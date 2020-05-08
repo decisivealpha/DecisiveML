@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Unreleased
+## [0.0.3] - 2020-05-08
 ### Added
 - Basic indicators
 - Helper methods for trading date offsets
